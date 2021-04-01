@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoRIA</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-top">
+        <div class="menu">
+          <div class="menu-list__left">
+            <ul>
+              <a href="#">
+                <li>Автомобили</li>
+              </a>
+              <a href="#">
+                <li>Мототранспорт</li>
+              </a>
+              <a href="#">
+                <li>Грузовые</li>
+              </a>
+            </ul>
+          </div>
+          <div class="menu-list__center">
+            <div class="logo">
+              <a href="#">
+                <div class="logo__all">
+                  <img src="images/logo.jpg" alt="logo">
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="menu-list__right">
+            <a href="#">
+              <li>Избранное</li>
+            </a>
+            <a href="#">
+              <li>Профиль</li>
+            </a>
+          </div>
+          <div class="images__top">
+            <a href="#"><img class="basket" src="images/basket.jpg" alt="basket"></a>
+            <a href="#"><img class="arrow" src="images/arrow.jpg" alt="arrow"></a>
+          </div>
+        </div>
+      </div>
+      <div class="header-content">
+        <div class="header-items">
+          <h1 class="header-content__title">
+            Самое продаваемое авто
+          </h1>
+          <div class="header-content__text">
+            Subaru Impreza
+          </div>
+          <a href="#" class="header-content__btn">
+            Смотреть авто
+          </a>
+        </div>
+        <div class="header-price">
+          <div class="price-top">
+            <p>12.000$</p>
+          </div>
+          <div class="header-image">
+            <img src="images/image-top.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="header-btns">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </header>
+  <div class="main">
+    <div class="main-top">
+      <div class="main-title">
+        Купил БМВ ?
+      </div>
+      <div class="main-subtitle">
+        Автосервис ГЕЙКЛУБ ждёт вас
+      </div>
+    </div>
+    <div class="main-choice">
+      <div class="main-choice__left">
+        <div class="main-choice__all">
+          <div class="main-choice__title">
+            Японские <span>авто</span>
+          </div>
+          <div class="main-choice__subtitle">
+            для любителей JDM
+          </div>
+          <div class="main-choice__btn">
+            <img src="images/arrow.png" alt="arrow">
+          </div>
+        </div>
+        <div class="main-choice__img">
+          <img src="images/main-left.png" alt="jdm">
+        </div>
+      </div>
+      <div class="main-choice__right">
+        <div class="main-choice__all">
+          <div class="main-choice__title">
+            Корчи за <span>1000$</span>
+          </div>
+          <div class="main-choice__subtitle">
+            Жиги и старые бмв
+          </div>
+          <div class="main-choice__btn">
+            <img src="images/arrow.png" alt="arrow">
+          </div>
+        </div>
+        <div class="main-choice__img">
+          <img src="images/main-right.png" alt="lada">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="search__all">
+    <input type="text" class="control" id="inp_1" placeholder="поиск авто">
+    <button id="srchBtn" type="submit" class="search" onclick="search()">НАЙТИ</button>
+    <button type="submit" class="search" onclick="searchClear()">Очистить поиск</button>
+  </div>
+  <div class="buttons">
+    <button class="DESC" id="sort" onclick="sortPrice()">Сортировать по цене</button>
+    <button class="DESC" id="sortMilage" onclick="sortMilage()">Сортировать по пробегу</button>
+    <button class="DESC" id="sortName" onclick="sortName()">Сортировать по названию</button>
+  </div>
+  <div class="inputAll">
+    <input id="price-from" type="number" placeholder="min">
+    <input id="price-to" type="number" placeholder="max">
+    <button class="DESC" type="submit"  id="sortAll" onclick="sortAll()">Сортировать</button>
+  </div>
+  <button id="btn_modal_window">Корзина &nbsp<span id="count">0</span></button>
+  <div id="my_modal" class="modal">
+    <div class="popup">
+      <div class="total" id="total">Total:</div>
+      <span class="close_modal_window">×</span>
+      <div class="products" id="products"></div>
+    </div>
+  </div>
+  <div class="search-all">
+    <div class="search__title">Результаты поиска</div>
+  </div>
+  <div class="items__all">
+    <div id="items"></div>
+  </div>
+  <div class="btn-bottom">
+    <button id="btn__btm">Все модели</button>
+  </div>
+  </header>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer-col__logo">
+          <a class="footer__logo href=" #">
+            <img src="images/logo.jpg" alt="">
+          </a>
+          <div class="footer__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla faucibus egestas elit, at eleifend elit
+            ornare ut.
+          </div>
+        </div>
+        <div class="footer-menu">
+          <div class="footer__title">Основные ссылки</div>
+          <ul class="footer__list">
+            <li><a href="#">О сайте</a></li>
+            <li><a href="#">Каталог</a></li>
+            <li><a href="#">Продажа</a></li>
+            <li><a href="#">Оплата</a></li>
+          </ul>
+        </div>
+        <div class="footer-menu">
+          <div class="footer__title">Категории</div>
+          <ul class="footer__list">
+            <li><a href="#">Легковые авто</a></li>
+            <li><a href="#">Мототранспорт</a></li>
+            <li><a href="#">Грузовые авто</a></li>
+            <li><a href="#">Авто для ЛГБТ</a></li>
+          </ul>
+        </div>
+        <div class="footer-menu">
+          <div class="footer__title">ПОЛЕЗНЫЕ ССЫЛКИ</div>
+          <ul class="footer__list">
+            <li><a href="#">Корзина</a></li>
+            <li><a href="#">Блог о авто</a></li>
+          </ul>
+        </div>
+        <div class="footer-menu">
+          <div class="footer__title">СОЦ СЕТИ</div>
+          <ul class="footer__list">
+            <li><img src="images/vk.png" class="imgBtm" alt="vk"><a href="#"> VK.com</a></li>
+            <li><img src="images/facebook.png" class="imgBtm" alt="FB"><a href="#"> Facebook</a></li>
+            <li><img src="images/instagram.png" class="imgBtm" alt="INST"><a href="#"> Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
